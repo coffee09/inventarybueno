@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Tabla Artículos -->
+        <button id="btnCrearArticulo" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArticulo">Crear Artículo</button>
+        <table id="tablaArticulos" class="table mt-2 table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Tabla Empleados -->
+        <button id="btnCrearEmpleado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEmpleado">Crear Empleado</button>
+        <table id="tablaEmpleados" class="table mt-2 table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Tabla Proveedores -->
+        <button id="btnCrearProveedor" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProveedor">Crear Proveedor</button>
+        <table id="tablaProveedores" class="table mt-2 table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Número</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Modales -->
+    <!-- Modal Artículo -->
+    <div id="modalArticulo" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Artículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="descripcionArticulo" class="form-label">Descripción:</label>
+                            <input id="descripcionArticulo" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precioArticulo" class="form-label">Precio:</label>
+                            <input id="precioArticulo" type="number" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stockArticulo" class="form-label">Stock:</label>
+                            <input id="stockArticulo" type="number" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Empleado -->
+    <div id="modalEmpleado" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Empleado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombreEmpleado" class="form-label">Nombre:</label>
+                            <input id="nombreEmpleado" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoEmpleado" class="form-label">Apellido:</label>
+                            <input id="apellidoEmpleado" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proveedor -->
+    <div id="modalProveedor" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Proveedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombreProveedor" class="form-label">Nombre:</label>
+                            <input id="nombreProveedor" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correoProveedor" class="form-label">Correo:</label>
+                            <input id="correoProveedor" type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numeroProveedor" class="form-label">Número:</label>
+                            <input id="numeroProveedor" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
